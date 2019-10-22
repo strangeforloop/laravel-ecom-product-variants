@@ -36,7 +36,6 @@ class RugsController extends Controller
      */
     public function store(Request $request)
     {
-               return view('pages.products');
 
     }
 

@@ -1,22 +1,9 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        <title>{{config('app.name', 'ECOMAPP')}}</title>
-    </head>
-    <body>
-        <h1>Chairs</h1>
-        <p>This is the chairs page</p>
-    </body>
-</html> --}}
-
 @extends('layouts.app')
 
 @section('content')
     <h1>Chairs</h1>
     <form method="post" action="{{ route('products.store') }}">
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="legType">Leg Type: </label>
             <select name="legTypes">

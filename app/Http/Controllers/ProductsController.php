@@ -38,7 +38,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        // create a new product
+        return view('products.index');
     }
 
     /**

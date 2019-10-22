@@ -4,6 +4,7 @@
 @section('content')
     <h1>Rugs</h1>
     <form method="post" action="{{ route('products.store') }}">
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="color">Color: </label>
             <select name="color">

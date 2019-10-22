@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
-use DB;
 
 class ChairsController extends Controller
 {
@@ -15,7 +13,7 @@ class ChairsController extends Controller
      */
     public function index()
     {
-        return view('pages.chairs');
+        return view('pages.index');
     }
 
     /**
@@ -36,8 +34,7 @@ class ChairsController extends Controller
      */
     public function store(Request $request)
     {
-        // create new chair product
-        
+        // return view('pages.products');
     }
 
     /**

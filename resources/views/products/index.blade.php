@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Products</h1>
-    @if(count($products) > 0)
+    {{-- @if(count($products) > 0)
         @foreach($products as $product)
             <div class="well">
                 <h3><a href="/products/{{$product->productId}}">{{$product->name}}</a></h3>
@@ -11,5 +11,5 @@
         @endforeach
     @else
         <p>No products to show</p>
-    @endif
+    @endif --}}
 @endsection

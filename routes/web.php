@@ -17,14 +17,14 @@
 
 Route::get('/', 'PagesController@index');
 
-// Route::get('/chairs', 'PagesController@chairs');
+Route::get('/chairs', 'PagesController@chairs');
 
-// Route::get('/rugs', 'PagesController@rugs');
+Route::get('/rugs', 'PagesController@rugs');
 
 Route::get('/products', 'PagesController@products');
 
 Route::resource('products', 'ProductsController');
 
-Route::resource('chairs', 'ChairsController');
+// Route::resource('chairs', 'ChairsController');
 
-Route::resource('rugs', 'RugsController');
+// Route::resource('rugs', 'RugsController');

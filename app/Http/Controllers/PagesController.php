@@ -10,13 +10,13 @@ class PagesController extends Controller
         return view('pages.index');
     }
     
-    // public function chairs() {
-    //     return view('pages.chairs');
-    // }
+    public function chairs() {
+        return view('pages.chairs');
+    }
 
-    // public function rugs() {
-    //     return view('pages.rugs');
-    // }
+    public function rugs() {
+        return view('pages.rugs');
+    }
 
     public function products() {
         return view('pages.products');
