@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use DB;
 
-class ProductsController extends Controller
+class ChairsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,19 +15,17 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        // $products = Product::all(); 
-        $products = Product::orderBy('created_at', 'desc')->get();
-        return view('products.index')->with('products', $products);
+        return view('pages.chairs');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminat e\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('products.create');
+        //
     }
 
     /**
@@ -38,7 +36,8 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        // create a new product
+        // create new chair product
+        
     }
 
     /**
@@ -49,8 +48,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
-        return view('products.show')->with('product', $product);
+        //
     }
 
     /**

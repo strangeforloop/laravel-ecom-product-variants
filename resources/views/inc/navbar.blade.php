@@ -11,7 +11,7 @@
             <li class="nav -item"><a class="nav-link" href="/products">Products</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/myapp/public/posts/create">Create Post</a></li>
+            <li><a href="/myapp/public/posts/create">Create Product</a></li>
         </ul>
     </div>
 </nav>
