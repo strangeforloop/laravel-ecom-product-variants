@@ -13,7 +13,7 @@ class ChairsController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        return view('pages.chairs');
     }
 
     /**
@@ -34,7 +34,7 @@ class ChairsController extends Controller
      */
     public function store(Request $request)
     {
-        // return view('pages.products');
+        return view('pages.index');
     }
 
     /**

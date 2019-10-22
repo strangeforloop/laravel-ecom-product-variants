@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Chairs</h1>
-    <form method="post" action="{{ route('products.store') }}">
+    <form method="post" action="{{ route('chairs.store') }}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="legType">Leg Type: </label>
