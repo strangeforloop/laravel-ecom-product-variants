@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Product_Variant;
 use DB;
 
 class ProductsController extends Controller
@@ -16,8 +17,8 @@ class ProductsController extends Controller
     public function index()
     {
         // $products = Product::all(); 
-        $products = Product::orderBy('created_at', 'desc')->get();
-        return view('products.index')->with('products', $products);
+        $productVariants = Product_Variant::orderBy('created_at', 'desc')->get();
+        return view('products.index')->with('productVariants', $productVariants);
     }
 
     /**

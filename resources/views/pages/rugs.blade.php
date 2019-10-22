@@ -3,7 +3,7 @@
 
 @section('content')
     <h1>Rugs</h1>
-    <form method="post" action="{{ route('products.store') }}">
+    <form method="post" action="{{ route('rugs.store') }}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="color">Color: </label>

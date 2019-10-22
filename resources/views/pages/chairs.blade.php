@@ -6,9 +6,9 @@
         {{ csrf_field() }}
         <div class="form-group">
             <label for="legType">Leg Type: </label>
-            <select name="legTypes">
+            <select name="legType">
                 <option value="default">default</option>
-                <option value="round-dowel">round-dowel</option>
+                <option value="round dowel">round-dowel</option>
                 <option value="tapered">tapered</option>
             </select>
         </div>
@@ -16,7 +16,7 @@
             <label for="fabricType">Fabric Type: </label>
             <select name="fabricType">
                 <option value="default">default</option>
-                <option value="heavy-cloth">heavy-cloth</option>
+                <option value="heavy cloth">heavy-cloth</option>
                 <option value="leather">leather</option>
               </select>
         </div>

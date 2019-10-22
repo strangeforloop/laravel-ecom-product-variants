@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Product_Variant;
+use App\Product_Details;
+use DB;
 
 class ChairsController extends Controller
 {
@@ -33,8 +37,42 @@ class ChairsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        return view('pages.index');
+    {                
+        // add product to product variants table
+        $prod_var = new Product_Variant;
+        // $prod_var->product_variants_id = intval($prod_var->product_variants_id + 1);
+        $prod_var->product_id = 1;
+        $var_name = $request->input('legType') . ' ' . $request->input('fabricType') . ' ' . $request->input('color');
+        $prod_var->product_variant_name = $var_name;
+        $prod_var->total_price = DB::table('products')->where('name', 'chair')->value('price')
+            + DB::table('variant__values')->where('value', $request->input('legType'))->value('price') 
+            + DB::table('variant__values')->where('value', $request->input('fabricType'))->value('price') 
+            + DB::table('variant__values')->where('value', $request->input('color'))->value('price');
+        $prod_var->save();
+
+        // add to product details for purposes of joining all info together
+        $product_details = new Product_Details;
+        // $product_details->product_detail_id = intval($product_details->product_details_id + 1);
+        $product_details->product_variable_id = DB::table('product__variants')->where('product_variant_name', $var_name)->value('product_variants_id');
+        $product_details->value_id = DB::table('variant__values')->where('value', $request->input('legType'))->value('value_id'); 
+        $product_details->save();
+
+        $product_details = new Product_Details;
+        // $product_details->product_detail_id = intval($product_details->product_details_id + 1);
+        $product_details->product_variable_id = DB::table('product__variants')->where('product_variant_name', $var_name)->value('product_variants_id');
+        $product_details->value_id = DB::table('variant__values')->where('value', $request->input('fabricType'))->value('value_id'); 
+        $product_details->save();
+
+        $product_details = new Product_Details;
+        // $product_details->product_detail_id = intval($product_details->product_details_id + 1);
+        $product_details->product_variable_id = DB::table('product__variants')->where('product_variant_name', $var_name)->value('product_variants_id');
+        $product_details->value_id = DB::table('variant__values')->where('value', $request->input('color'))->value('value_id'); 
+        $product_details->save();
+
+        // return view('pages.success');
+
+        // return $product_details;
+        return redirect('/products');
     }
 
     /**
